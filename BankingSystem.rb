@@ -1,6 +1,6 @@
 class Account
   @@account_id=0
-  attr_accessor :balance
+  attr_accessor :balance,:user_id
   def initialize
     @balance = 0.0
     @@account_id+=1
@@ -75,7 +75,8 @@ while flag
   print "\n1.Withdraw Money\n"
   print "2.Deposit Money\n"
   print "3.Calculate Interest\n"
-  print "4.Check Balance\n\n"
+  print "4.Check Balance\n"
+  print "5.Check User Id\n"
 
   user_choice=gets.to_i
 
@@ -88,6 +89,8 @@ while flag
       obj.calculate_interest
     when 4
       obj.check_balance
+    when 5
+      print "User Id: #{obj.user_id}\n"
     else
       print "Invalid Choice!!!\n"
   end
